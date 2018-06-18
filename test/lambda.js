@@ -1,5 +1,5 @@
 let AWS = require('aws-sdk');
-// let firebase = require('firebase');
+let firebase = require('firebase');
 let google = require('googleapis').google;
 const storage = google.storage('v1');
 let _auth = require('./Authorizer');
@@ -8,6 +8,23 @@ const pubsub = google.pubsub('v1');
 // const xPathEvaluator = new SL_XML();
 exports.handler = function (event, context, callback) {
 
+let config = {
+            apiKey: "AIzaSyDMF17Pu7_5gLRYX_Ff_dbA8Ak5_RONIQA",
+            authDomain: "testusercreate-89b32.firebaseapp.com",
+            databaseURL: "https://testusercreate-89b32.firebaseio.com",
+            storageBucket: "testusercreate-89b32.appspot.com"
+        };
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(config);
+        }
+
+        //TODO configure proper authentication
+        firebase.auth().signInWithEmailAndPassword('andun@adroitlogic.com', 'Andun!12345').catch(error => {
+            console.log(error);
+        });
+        // Get a reference to the database service
+        this.database = firebase.database();
 
 
 
