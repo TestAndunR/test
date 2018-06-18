@@ -1,5 +1,5 @@
 let AWS = require('aws-sdk');
-let firebase = require('firebase');
+// let firebase = require('firebase');
 let google = require('googleapis').google;
 const storage = google.storage('v1');
 let _auth = require('./Authorizer');
@@ -9,7 +9,7 @@ const pubsub = google.pubsub('v1');
 exports.handler = function (event, context, callback) {
 
 
-	
+
 
 	pubsub.projects.topics.subscriptions.list({
 		topic: `projects/${process.env.GCLOUD_PROJECT_ID}/topics/incoming`,
