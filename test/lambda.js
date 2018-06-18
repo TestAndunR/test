@@ -1,5 +1,5 @@
 let AWS = require('aws-sdk');
-let firebase = require('firebase');
+// let firebase = require('firebase');
 let google = require('googleapis').google;
 const storage = google.storage('v1');
 let _auth = require('./Authorizer');
