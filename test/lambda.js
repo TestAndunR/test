@@ -1,37 +1,25 @@
 let AWS = require('aws-sdk');
+let SL_TWITTER = require('slappforge-sdk-twitter');
+let twitterClients = require('./TwitterClients');
+const twitter = new SL_TWITTER.TwitterP(twitterClients);
 const s3 = new AWS.S3();
 const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = function (event, context, callback) {
-    
-    console.log("Test")
-    s3.listObjects({
-        'Bucket': 'smoketest.s3.bucket',
-        'MaxKeys': 10,
-        'Prefix': ''
-    }).promise()
-        .then(data => {
-            console.log(data);           // successful response
-            /*
-            data = {
-             Contents: [
-                {
-                   ETag: "\\"70ee1738b6b21e2c8a43f3a5ab0eee71\\"",
-                   Key: "example1.jpg",
-                   LastModified: <Date Representation>,
-                   Owner: {
-                      DisplayName: "myname",
-                      ID: "12345example25102679df27bb0ae12b3f85be6f290b936c4393484be31bebcc"
-                   },
-                   Size: 11,
-                   StorageClass: "STANDARD"
-                },
-                {...}
-            */
-        })
-        .catch(err => {
-            console.log(err, err.stack); // an error occurred
-        });
+
+    console.log("Test Prod deployment")
+    twitter.searchTweets({
+        "searchParams": {
+            "q": "serverless",
+            "count": 5
+        },
+        "clientName": "twClient"
+    }).then(response => {
+        let data = response.data;
+        console.log(data);
+    }).catch(err => {
+        console.log(err);
+    });
 
 
     callback(null, 'Successfully executed');
