@@ -1,1 +1,115 @@
-{"EDITOR_STATE":{"allProjectFiles":{"4cf9a821-e38b-42d2-8e25-0297243e34f4":{"id":"4cf9a821-e38b-42d2-8e25-0297243e34f4","parent":null,"name":"test","type":"DIRECTORY","isDirectory":true,"children":["953ee17b-12ac-4c37-a8a0-92dab2d9849e","6fd218d0-9614-46e2-b43a-0906f07b9ad2"],"isRemovable":false,"filePath":"test"},"953ee17b-12ac-4c37-a8a0-92dab2d9849e":{"id":"953ee17b-12ac-4c37-a8a0-92dab2d9849e","parent":"4cf9a821-e38b-42d2-8e25-0297243e34f4","name":"lambda.js","type":"LAMBDA_FILE","isDirectory":false,"children":[],"isRemovable":true,"filePath":"test/lambda.js","code":"let AWS = require('aws-sdk');\nconst kinesis = new AWS.Kinesis();\nlet SL_TWITTER = require('slappforge-sdk-twitter');\nlet twitterClients = require('./TwitterClients');\nconst twitter = new SL_TWITTER.TwitterP(twitterClients);\nconst s3 = new AWS.S3();\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    kinesis.describeStream({\n        StreamName: 'smoke-test'\n    }).promise()\n        .then(data => {\n            // your logic goes here\n            console.log(data)\n        })\n        .catch(err => {\n            // error handling goes here\n            console.log(err)\n        });\n\n\n\n\n    callback(null, 'Successfully executed');\n}","triggers":[],"config":{"memory":128,"timeout":60,"runtime":"nodejs8.10"},"testCases":{"83c2012a-ecc9-4583-b44c-59214042b0b2":{"id":"83c2012a-ecc9-4583-b44c-59214042b0b2","name":"Unnamed event","functionId":"953ee17b-12ac-4c37-a8a0-92dab2d9849e","event":"{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"}}},"6fd218d0-9614-46e2-b43a-0906f07b9ad2":{"id":"6fd218d0-9614-46e2-b43a-0906f07b9ad2","parent":"4cf9a821-e38b-42d2-8e25-0297243e34f4","name":"TwitterClients.js","type":"JS_FILE","isDirectory":false,"children":[],"isRemovable":true,"filePath":"test/TwitterClients.js","code":"let SL_TWITTER = require('slappforge-sdk-twitter');\nconst twitter = new SL_TWITTER.Twitter();\nmodule.exports = {\n\n};","triggers":[]}},"deletedFiles":[],"rootNode":"4cf9a821-e38b-42d2-8e25-0297243e34f4","openFiles":["953ee17b-12ac-4c37-a8a0-92dab2d9849e"],"currentFileId":"953ee17b-12ac-4c37-a8a0-92dab2d9849e","resources":{"kinesissmokeTest":{"name":"kinesissmokeTest","type":"Kinesis","config":{"mode":0,"StreamName":"smoke-test","shards":1,"region":"us-east-1","operation":"describe-stream"},"globallyEditable":true}},"envVariables":[{"lambdaId":"all","varKey":"SIGMA_AWS_ACC_ID","varValue":null,"shouldPersist":false,"displayOnly":false,"editable":false}],"packageJSON":{"dependencies":{"aws-sdk":{"name":"aws-sdk","version":"2.176.0","notRemovable":true},"slappforge-sdk-twitter":{"name":"slappforge-sdk-twitter","version":"0.0.2","notRemovable":false}}},"lambdaId":"953ee17b-12ac-4c37-a8a0-92dab2d9849e","additionalFiles":[{"content":"let SL_TWITTER = require('slappforge-sdk-twitter');\nconst twitter = new SL_TWITTER.Twitter();\nmodule.exports = {\n\n        'twClient': twitter.createClient({\n            consumer_key: process.env.TWITTER_twClient_consumerKey,\n            consumer_secret: process.env.TWITTER_twClient_consumerSecret,\n            access_token: process.env.TWITTER_twClient_accessToken,\n            access_token_secret: process.env.TWITTER_twClient_accessTokenSecret\n        }),\n};","filePath":"test/TwitterClients.js","fileName":"TwitterClients.js","showFileOnSideBar":true},{"content":"let SL_TWITTER = require('slappforge-sdk-twitter');\nconst twitter = new SL_TWITTER.Twitter();\nmodule.exports = {\n\n};","filePath":"test/TwitterClients.js","fileName":"TwitterClients.js","showFileOnSideBar":true}]},"PROJECT_META":{"projectName":"test","projectDescription":"","projectVersion":"1.0.0","projectRegion":"us-east-1","lastSave":1536745246832},"VCS_STATE":{"provider":"GitHub","repo":{"name":"test","url":"https://github.com/TestAndunR/test"}}}
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf": {
+        "id": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
+        "parent": null,
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "9bd510d2-2adc-404b-a3ac-c550891a0367",
+          "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077"
+        ],
+        "isRemovable": false,
+        "filePath": "test"
+      },
+      "9bd510d2-2adc-404b-a3ac-c550891a0367": {
+        "id": "9bd510d2-2adc-404b-a3ac-c550891a0367",
+        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      },
+      "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077": {
+        "id": "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
+        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
+        "name": "app.js.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/app.js.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [
+          {
+            "resourceName": "apigusEast1testDotstestany",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
+    "openFiles": [
+      "9bd510d2-2adc-404b-a3ac-c550891a0367",
+      "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077"
+    ],
+    "currentFileId": "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
+    "resources": {
+      "apigusEast1testDotstestany": {
+        "name": "apigusEast1testDotstestany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "testDots",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "test",
+          "resourcePath": "/test",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "test"
+        },
+        "globallyEditable": false
+      }
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    },
+    "lambdaId": "9bd510d2-2adc-404b-a3ac-c550891a0367"
+  },
+  "PROJECT_META": {
+    "projectName": "test",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "lastSave": 1542082792779
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "test",
+      "url": "https://github.com/TestAndunR/test"
+    }
+  }
+}
