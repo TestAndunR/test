@@ -17,12 +17,12 @@
       "9bd510d2-2adc-404b-a3ac-c550891a0367": {
         "id": "9bd510d2-2adc-404b-a3ac-c550891a0367",
         "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "lambda.js",
+        "name": "lamda.test.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lambda.js",
+        "filePath": "test/lamda.test.js",
         "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "triggers": [],
         "config": {
@@ -54,13 +54,15 @@
         }
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "test/lambda.js"
+    ],
     "rootNode": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
     "openFiles": [
       "9bd510d2-2adc-404b-a3ac-c550891a0367",
       "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077"
     ],
-    "currentFileId": "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
+    "currentFileId": "9bd510d2-2adc-404b-a3ac-c550891a0367",
     "resources": {
       "apigusEast1testDotstestany": {
         "name": "apigusEast1testDotstestany",
@@ -103,7 +105,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1542082792779
+    "lastSave": 1542082970564
   },
   "VCS_STATE": {
     "provider": "GitHub",
