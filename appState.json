@@ -57,12 +57,12 @@
       "0919a01a-3120-4a88-9d0f-4b32b3424b4f": {
         "id": "0919a01a-3120-4a88-9d0f-4b32b3424b4f",
         "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "lambda$%?!@.js",
+        "name": "lambda$%?!@test.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lambda$%?!@.js",
+        "filePath": "test/lambda$%?!@test.js",
         "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "triggers": [],
         "config": {
@@ -72,7 +72,9 @@
         }
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "test/lambda$%?!@.js"
+    ],
     "rootNode": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
     "openFiles": [
       "9bd510d2-2adc-404b-a3ac-c550891a0367",
@@ -122,7 +124,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1542083090873
+    "lastSave": 1542083200768
   },
   "VCS_STATE": {
     "provider": "GitHub",
