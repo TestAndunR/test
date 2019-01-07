@@ -1,127 +1,51 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf": {
-        "id": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
+      "acede92f-2a7a-4f94-9e4b-7c433abab7df": {
+        "id": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "9bd510d2-2adc-404b-a3ac-c550891a0367",
-          "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
-          "0919a01a-3120-4a88-9d0f-4b32b3424b4f",
-          "b675904e-2152-4b19-a443-615b5d957325"
+          "5a155273-c117-498a-89ec-3272dedaeb65"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "9bd510d2-2adc-404b-a3ac-c550891a0367": {
-        "id": "9bd510d2-2adc-404b-a3ac-c550891a0367",
-        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "lamda.test.js",
+      "5a155273-c117-498a-89ec-3272dedaeb65": {
+        "id": "5a155273-c117-498a-89ec-3272dedaeb65",
+        "parent": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
+        "name": "lambda.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lamda.test.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "filePath": "test/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    console.log(\"Hell world\")\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
           "timeout": 60,
           "memory": 128
-        }
-      },
-      "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077": {
-        "id": "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
-        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "app.js.js",
-        "type": "LAMBDA_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/app.js.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
-        "triggers": [
-          {
-            "resourceName": "apigusEast1testDotstestany",
-            "config": {}
-          }
-        ],
-        "config": {
-          "runtime": "nodejs8.10",
-          "timeout": 60,
-          "memory": 128
-        }
-      },
-      "0919a01a-3120-4a88-9d0f-4b32b3424b4f": {
-        "id": "0919a01a-3120-4a88-9d0f-4b32b3424b4f",
-        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "lambda$%?!@test.js",
-        "type": "LAMBDA_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/lambda$%?!@test.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
-        "triggers": [],
-        "config": {
-          "runtime": "nodejs8.10",
-          "timeout": 60,
-          "memory": 128
-        }
-      },
-      "b675904e-2152-4b19-a443-615b5d957325": {
-        "id": "b675904e-2152-4b19-a443-615b5d957325",
-        "parent": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-        "name": "@!@*!(@*(@!(^&^$#^@@.js",
-        "type": "LAMBDA_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/@!@*!(@*(@!(^&^$#^@@.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
-        "triggers": [],
-        "config": {
-          "runtime": "nodejs8.10",
-          "timeout": 60,
-          "memory": 128
-        }
-      }
-    },
-    "deletedFiles": [
-      "test/#@^#@#@&@#*.js"
-    ],
-    "rootNode": "49b8f83a-d5a8-4251-8ba2-57bb3e17c4cf",
-    "openFiles": [
-      "9bd510d2-2adc-404b-a3ac-c550891a0367",
-      "ac5288a0-e1ee-4d15-a3ed-4a5b8ae66077",
-      "0919a01a-3120-4a88-9d0f-4b32b3424b4f",
-      "b675904e-2152-4b19-a443-615b5d957325"
-    ],
-    "currentFileId": "b675904e-2152-4b19-a443-615b5d957325",
-    "resources": {
-      "apigusEast1testDotstestany": {
-        "name": "apigusEast1testDotstestany",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 0,
-          "apiName": "testDots",
-          "endpointType": "EDGE",
-          "resourceMode": 0,
-          "resourceName": "test",
-          "resourcePath": "/test",
-          "restMethod": "ANY",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 0,
-          "stageName": "test"
         },
-        "globallyEditable": false
+        "testCases": {
+          "ec354799-c8ee-4ca7-8357-2d9e8507a9dc": {
+            "id": "ec354799-c8ee-4ca7-8357-2d9e8507a9dc",
+            "name": "Unnamed event",
+            "functionId": "5a155273-c117-498a-89ec-3272dedaeb65",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
       }
     },
+    "deletedFiles": [],
+    "rootNode": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
+    "openFiles": [
+      "5a155273-c117-498a-89ec-3272dedaeb65"
+    ],
+    "currentFileId": "5a155273-c117-498a-89ec-3272dedaeb65",
+    "resources": {},
     "envVariables": [
       {
         "lambdaId": "all",
@@ -135,15 +59,16 @@
     "packageJSON": {
       "dependencies": {}
     },
-    "lambdaId": "9bd510d2-2adc-404b-a3ac-c550891a0367"
+    "lambdaId": "5a155273-c117-498a-89ec-3272dedaeb65"
   },
   "PROJECT_META": {
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
+    "lastSave": 1546853915731,
     "platform": "AWS",
-    "lastSave": 1542083335494
+    "platformRegions": {}
   },
   "VCS_STATE": {
     "provider": "GitHub",
