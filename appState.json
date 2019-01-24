@@ -38,9 +38,7 @@
         }
       }
     },
-    "deletedFiles": [
-      "test/aaa.js"
-    ],
+    "deletedFiles": [],
     "rootNode": "e15a033b-1ef3-417e-9df2-09a74c740013",
     "openFiles": [
       "57ad1578-6a04-4bea-8636-3b131238869c"
@@ -136,7 +134,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1548308600054,
+    "lastSave": 1548323124714,
     "platformRegions": {}
   },
   "VCS_STATE": {
