@@ -23,7 +23,12 @@
         "isRemovable": true,
         "filePath": "test/lambda.js",
         "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
-        "triggers": [],
+        "triggers": [
+          {
+            "resourceName": "apigusEast1HSVendorpromohead",
+            "config": {}
+          }
+        ],
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -39,7 +44,42 @@
       "57ad1578-6a04-4bea-8636-3b131238869c"
     ],
     "currentFileId": "57ad1578-6a04-4bea-8636-3b131238869c",
-    "resources": {},
+    "resources": {
+      "apigusEast1HSVendorpromohead": {
+        "name": "apigusEast1HSVendorpromohead",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "HS Vendor",
+          "apiId": "2owdjvd5i7",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "hfkl4vnbka",
+          "existingResources": {
+            "/promo": "3o8456",
+            "/promo/redeems": "3xd0dc",
+            "/vendor/list": "9pwxkc",
+            "/redeem": "d7xwsp",
+            "/": "hfkl4vnbka",
+            "/user": "hupuqk",
+            "/promo/list": "l5jx2m",
+            "/qr": "rcbg6a",
+            "/vendor": "wx8mtf"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/promo",
+          "resourceName": "promo",
+          "resourceId": "3o8456",
+          "restMethod": "HEAD",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "hotProd",
+          "stageDeploymentId": "60ke9p"
+        },
+        "globallyEditable": false
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -64,7 +104,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1548304783032,
+    "lastSave": 1548305658064,
     "platformRegions": {}
   },
   "VCS_STATE": {
