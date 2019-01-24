@@ -8,7 +8,8 @@
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "57ad1578-6a04-4bea-8636-3b131238869c"
+          "57ad1578-6a04-4bea-8636-3b131238869c",
+          "b9628555-0ae5-47cd-8562-36956971f004"
         ],
         "isRemovable": false,
         "filePath": "test"
@@ -36,14 +37,34 @@
           "memory": 128,
           "layers": []
         }
+      },
+      "b9628555-0ae5-47cd-8562-36956971f004": {
+        "id": "b9628555-0ae5-47cd-8562-36956971f004",
+        "parent": "e15a033b-1ef3-417e-9df2-09a74c740013",
+        "name": "aaa.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/aaa.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        }
       }
     },
     "deletedFiles": [],
     "rootNode": "e15a033b-1ef3-417e-9df2-09a74c740013",
     "openFiles": [
-      "57ad1578-6a04-4bea-8636-3b131238869c"
+      "57ad1578-6a04-4bea-8636-3b131238869c",
+      "b9628555-0ae5-47cd-8562-36956971f004"
     ],
-    "currentFileId": "57ad1578-6a04-4bea-8636-3b131238869c",
+    "currentFileId": "b9628555-0ae5-47cd-8562-36956971f004",
     "resources": {
       "apigusEast1HSVendorpromohead": {
         "name": "apigusEast1HSVendorpromohead",
@@ -134,7 +155,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1548306653969,
+    "lastSave": 1548308562355,
     "platformRegions": {}
   },
   "VCS_STATE": {
