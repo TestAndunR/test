@@ -1,51 +1,49 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "acede92f-2a7a-4f94-9e4b-7c433abab7df": {
-        "id": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
+      "e15a033b-1ef3-417e-9df2-09a74c740013": {
+        "id": "e15a033b-1ef3-417e-9df2-09a74c740013",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "5a155273-c117-498a-89ec-3272dedaeb65"
+          "57ad1578-6a04-4bea-8636-3b131238869c"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "5a155273-c117-498a-89ec-3272dedaeb65": {
-        "id": "5a155273-c117-498a-89ec-3272dedaeb65",
-        "parent": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
+      "57ad1578-6a04-4bea-8636-3b131238869c": {
+        "id": "57ad1578-6a04-4bea-8636-3b131238869c",
+        "parent": "e15a033b-1ef3-417e-9df2-09a74c740013",
         "name": "lambda.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    console.log(\"Hell world\")\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
+          "handler": "handler",
           "timeout": 60,
-          "memory": 128
-        },
-        "testCases": {
-          "ec354799-c8ee-4ca7-8357-2d9e8507a9dc": {
-            "id": "ec354799-c8ee-4ca7-8357-2d9e8507a9dc",
-            "name": "Unnamed event",
-            "functionId": "5a155273-c117-498a-89ec-3272dedaeb65",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
-          }
+          "memory": 128,
+          "layers": []
         }
       }
     },
     "deletedFiles": [],
-    "rootNode": "acede92f-2a7a-4f94-9e4b-7c433abab7df",
+    "rootNode": "e15a033b-1ef3-417e-9df2-09a74c740013",
     "openFiles": [
-      "5a155273-c117-498a-89ec-3272dedaeb65"
+      "57ad1578-6a04-4bea-8636-3b131238869c"
     ],
-    "currentFileId": "5a155273-c117-498a-89ec-3272dedaeb65",
+    "currentFileId": "57ad1578-6a04-4bea-8636-3b131238869c",
     "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
     "envVariables": [
       {
         "lambdaId": "all",
@@ -58,16 +56,15 @@
     ],
     "packageJSON": {
       "dependencies": {}
-    },
-    "lambdaId": "5a155273-c117-498a-89ec-3272dedaeb65"
+    }
   },
   "PROJECT_META": {
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
-    "lastSave": 1546853915731,
     "platform": "AWS",
+    "lastSave": 1548304643887,
     "platformRegions": {}
   },
   "VCS_STATE": {
