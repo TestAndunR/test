@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n    ddb.scan({\n        TableName: 'HS_Redeem'\n    }).promise().then(function (data) {\n        //your logic goes here\n    }).catch(function (err) {\n        //handle error\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "triggers": [
           {
             "resourceName": "apigusEast1HSVendorpromohead",
@@ -78,6 +78,36 @@
           "stageDeploymentId": "60ke9p"
         },
         "globallyEditable": false
+      },
+      "ddbHSRedeem": {
+        "name": "ddbHSRedeem",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "scan",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/HS_Redeem",
+            "name": "HS_Redeem",
+            "partitionKey": "redeemId",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "mode": 1
+          },
+          "parameters": {
+            "Key": {},
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        },
+        "globallyEditable": false
       }
     },
     "customTemplate": {
@@ -104,7 +134,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1548305658064,
+    "lastSave": 1548305829822,
     "platformRegions": {}
   },
   "VCS_STATE": {
