@@ -1,28 +1,28 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "43277e04-4215-4614-a47e-d0baccb61670": {
-        "id": "43277e04-4215-4614-a47e-d0baccb61670",
+      "5c2911c3-1e80-4060-ad2b-d9194a2a4160": {
+        "id": "5c2911c3-1e80-4060-ad2b-d9194a2a4160",
         "parent": null,
-        "name": "test",
+        "name": "sss",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "7eb36fe9-b457-4f97-ac69-efe2c13c8a63"
+          "8dd4dda7-892f-4f3f-bd36-cc27839bac50"
         ],
         "isRemovable": false,
-        "filePath": "test"
+        "filePath": "sss"
       },
-      "7eb36fe9-b457-4f97-ac69-efe2c13c8a63": {
-        "id": "7eb36fe9-b457-4f97-ac69-efe2c13c8a63",
-        "parent": "43277e04-4215-4614-a47e-d0baccb61670",
+      "8dd4dda7-892f-4f3f-bd36-cc27839bac50": {
+        "id": "8dd4dda7-892f-4f3f-bd36-cc27839bac50",
+        "parent": "5c2911c3-1e80-4060-ad2b-d9194a2a4160",
         "name": "lambda.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    //ccccss\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "filePath": "sss/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n    ddb.put({\n        TableName: 'test',\n        Item: { 'testId': 'aaa' }\n    }).promise().then(function (data) {\n        //your logic goes here\n    }).catch(function (err) {\n        //handle error\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -34,12 +34,45 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "43277e04-4215-4614-a47e-d0baccb61670",
+    "rootNode": "5c2911c3-1e80-4060-ad2b-d9194a2a4160",
     "openFiles": [
-      "7eb36fe9-b457-4f97-ac69-efe2c13c8a63"
+      "8dd4dda7-892f-4f3f-bd36-cc27839bac50"
     ],
-    "currentFileId": "7eb36fe9-b457-4f97-ac69-efe2c13c8a63",
-    "resources": {},
+    "currentFileId": "8dd4dda7-892f-4f3f-bd36-cc27839bac50",
+    "resources": {
+      "ddbtest": {
+        "name": "ddbtest",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "put",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/test",
+            "name": "test",
+            "partitionKey": "testId",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "mode": 1
+          },
+          "parameters": {
+            "Key": {},
+            "Item": {
+              "testId": "aaa"
+            },
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        },
+        "globallyEditable": false
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -55,22 +88,29 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
-    "projectName": "test",
+    "projectName": "sss",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1549867928899
+    "lastSave": 1549878827710
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
-      "name": "test",
+      "name": "sss",
       "url": "https://github.com/TestAndunR/test"
     }
   }
