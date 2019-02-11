@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function(event, context, callback) {\n    //cccc\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -65,7 +65,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1549867767240
+    "lastSave": 1549867847701
   },
   "VCS_STATE": {
     "provider": "GitHub",
