@@ -41,7 +41,8 @@
         "isDirectory": true,
         "children": [
           "83c5c8f1-89bb-475a-9836-122e13b72e9a",
-          "2c280df6-812d-400c-93c6-d912efa31cc3"
+          "2c280df6-812d-400c-93c6-d912efa31cc3",
+          "6ca7010b-a0b5-4ec9-a489-91c1c10c89e2"
         ],
         "isRemovable": true,
         "filePath": "test/test"
@@ -68,6 +69,17 @@
         "isRemovable": true,
         "filePath": "test/test/test.xml",
         "code": ""
+      },
+      "6ca7010b-a0b5-4ec9-a489-91c1c10c89e2": {
+        "id": "6ca7010b-a0b5-4ec9-a489-91c1c10c89e2",
+        "parent": "471d4323-4691-464b-a173-6f17b2eefd79",
+        "name": "test.json",
+        "type": "JSON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/test/test.json",
+        "code": ""
       }
     },
     "deletedFiles": [],
@@ -75,9 +87,9 @@
     "openFiles": [
       "5778655c-cfa4-4417-8761-fadf8ba5a97c",
       "83c5c8f1-89bb-475a-9836-122e13b72e9a",
-      "2c280df6-812d-400c-93c6-d912efa31cc3"
+      "6ca7010b-a0b5-4ec9-a489-91c1c10c89e2"
     ],
-    "currentFileId": "2c280df6-812d-400c-93c6-d912efa31cc3",
+    "currentFileId": "6ca7010b-a0b5-4ec9-a489-91c1c10c89e2",
     "resources": {},
     "customTemplate": {
       "dialect": null,
@@ -104,7 +116,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1553766137835
+    "lastSave": 1553766538440
   },
   "VCS_STATE": {
     "provider": "GitHub",
