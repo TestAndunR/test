@@ -1,8 +1,6 @@
 {
-  "name": "sss",
+  "name": "test",
   "version": "1.0.0",
   "dependencies": {},
-  "devDependencies": {
-    "aws-sdk": "2.176.0"
-  }
+  "devDependencies": {}
 }
